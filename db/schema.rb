@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2023_06_19_182953) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "awards", force: :cascade do |t|
-    t.integer "event_id", null: false
+    t.bigint "event_id", null: false
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -28,9 +31,9 @@ ActiveRecord::Schema.define(version: 2023_06_19_182953) do
   end
 
   create_table "participations", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
-    t.integer "award_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.bigint "award_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["award_id"], name: "index_participations_on_award_id"
