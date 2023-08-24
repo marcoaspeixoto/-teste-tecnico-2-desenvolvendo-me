@@ -1,4 +1,4 @@
-# spec/database_triggers_spec.rb
+require 'rails_helper'
 
 RSpec.describe "Database Triggers" do
   it "does not allow creating more than 3 awards for an event" do
