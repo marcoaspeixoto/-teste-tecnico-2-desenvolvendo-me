@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Database Triggers" do
+RSpec.describe "Awards Check limit" do
   it "does not allow creating more than 3 awards for an event" do
     event = Event.create(name: "Test Event")
 
